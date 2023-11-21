@@ -1,0 +1,1 @@
+# Alura_Curso_1_OpenAI
