@@ -51,12 +51,7 @@ lista_mensagens = [
 
 resposta = client.chat.completions.create(
     messages = lista_mensagens,
-    model=modelo,
-    temperature=1,
-    max_tokens=tamanho_esperado_saida,
-    top_p=1,
-    frequency_penalty=0,
-    presence_penalty=0
+    model=modelo
 )
 
 print(resposta.choices[0].message.content)

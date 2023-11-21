@@ -1,0 +1,13 @@
+Recomendação de Ação: 
+
+Com base na análise da transação ID 9c, proponho as seguintes ações:
+
+- Acionar setor Anti-Fraude: Devido ao status de 'Possível Fraude' e a circunstâncias suspeitas, como o valor da transação fora da média usual e o horário incomum de compra, acreditamos que o setor Anti-Fraude deve ser envolvido. Eles devem conduzir uma investigação profunda para validar os detalhes da transação.
+
+- Notificar Cliente: Além disso, sugerimos que o cliente seja notificado sobre a atividade suspeita em sua conta. Ele deve ser consultado para confirmar se realizou a transação. 
+
+- Realizar Verificação Manual: Por fim, recomendamos a realização de uma verificação manual da transação, o que pode incluir a revisão de outras atividades recentes na conta do cliente, a comparação dos padrões de comportamento e a verificação de informações adicionais do cliente para mais indícios sobre a legitimidade da transação.
+
+Classificação de Fraude:
+
+Se confirmada como fraude, esta transação pode ser classificada como 'Compra não autorizada'. Isso ocorre quando uma transação é realizada sem o conhecimento ou permissão do titular da conta. Amenizar tal situação requer medidas como o reembolso ao cliente e a atualização dos sistemas de detecção de fraude para prevenir futuros incidentes semelhantes.
