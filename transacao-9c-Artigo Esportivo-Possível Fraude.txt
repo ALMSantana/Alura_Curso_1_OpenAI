@@ -1,13 +1,13 @@
-Recomendação de Ação: 
+Com base nos detalhes da transação id: "9c", minha recomendação é a seguinte:
 
-Com base na análise da transação ID 9c, proponho as seguintes ações:
+Ação Recomendada: 
 
-- Acionar setor Anti-Fraude: Devido ao status de 'Possível Fraude' e a circunstâncias suspeitas, como o valor da transação fora da média usual e o horário incomum de compra, acreditamos que o setor Anti-Fraude deve ser envolvido. Eles devem conduzir uma investigação profunda para validar os detalhes da transação.
+1. **Notificar o Cliente**: Devido ao status de "Possível Fraude", é necessário entrar em contato com o cliente para verificar a atividade suspeita. O objetivo desta notificação é fazer o cliente confirmar se ele reconhece a transação, ou se é uma ação que ele não aprovou.
 
-- Notificar Cliente: Além disso, sugerimos que o cliente seja notificado sobre a atividade suspeita em sua conta. Ele deve ser consultado para confirmar se realizou a transação. 
+2. **Acionar Setor Anti-Fraude**: Em consideração à natureza suspeita da transação, indicada pelo parecer dado que a compra de alto valor é incomum para o tipo de estabelecimento e a localização não corresponder à do titular do cartão, é preciso que a equipe Anti-Fraude esteja envolvida para uma investigação mais profunda dessa transação.
 
-- Realizar Verificação Manual: Por fim, recomendamos a realização de uma verificação manual da transação, o que pode incluir a revisão de outras atividades recentes na conta do cliente, a comparação dos padrões de comportamento e a verificação de informações adicionais do cliente para mais indícios sobre a legitimidade da transação.
+3. **Realizar Verificação Manual**: Uma revisão manual adicional da transação deve ser realizada para garantir que todas as verificações de segurança sejam atendidas. A revisão manual também pode ajudar a identificar outros indicadores de fraude que os mecanismos automáticos podem ter perdido.
 
 Classificação de Fraude:
 
-Se confirmada como fraude, esta transação pode ser classificada como 'Compra não autorizada'. Isso ocorre quando uma transação é realizada sem o conhecimento ou permissão do titular da conta. Amenizar tal situação requer medidas como o reembolso ao cliente e a atualização dos sistemas de detecção de fraude para prevenir futuros incidentes semelhantes.
+Se confirmada como fraude, essa transação pode ser classificada como **Fraude de Cartão Não-Presente** devido ao fato de que a localização da transação não coincide com a localização do titular do cartão, sugerindo que o titular do cartão não estava presente na hora em que a transação foi feita. Esta é uma forma comum de fraude de cartão de crédito. Para prevenção futura, considerar a implementação de verificações de segurança adicionais para transações de alto valor.

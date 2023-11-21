@@ -1,6 +1,6 @@
 ID Transacao, Tipo de Transação,Estabelecimento,Horário,Valor,Produto,Cidade - Estado
 9c,Crédito,GameStore C,2023-11-21 21:53:28,1103,Artigo Esportivo,Porto Alegre - RS (Brasil)
-8c,Crédito,Padaria Doce Pão,2023-11-21 21:39:28,21,Bolos,Porto Alegre - RS (Brasil)
+8c,Crédito,Padaria Doce Pão,2023-11-21 21:39:28,21,Bolos,São Paulo - SP (Brasil)
 7c,Crédito,Recarga Fácil,2023-11-21 21:35:28,50,Recarga de 50 Reais,São Paulo - SP (Brasil)
 6c,Crédito,GameStore C,2023-11-15 21:35:28,180,Jogo Digital,São Paulo - SP (Brasil)
 5c,Crédito,GameStore C,2023-11-10 15:54:28,152,Jogo Digital,São Paulo - SP (Brasil)

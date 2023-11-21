@@ -35,7 +35,7 @@ def analisar_transacao(lista_de_transacoes):
 
     Cada nova transação deve ser inserida dentro da lista do JSON. Adote o formato de resposta abaixo.
 
-    # Formato Resposta
+    # Formato Saída (gere apenas o JSON abaixo como resposta)
     {
         "transacoes": [
             {
