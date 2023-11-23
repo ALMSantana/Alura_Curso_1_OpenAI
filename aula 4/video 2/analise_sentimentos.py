@@ -1,10 +1,12 @@
-from openai import OpenAI
+import openai
+from openai import *
 from dotenv import load_dotenv
 import os
+import time
 
 load_dotenv()
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key="")
 modelo = "gpt-4"
 
 def analise_sentimento(nome_do_produto):
@@ -25,24 +27,37 @@ def analise_sentimento(nome_do_produto):
     prompt_usuario = carrega(f"./dados/avaliacoes-{nome_do_produto}.txt")
     print(f"Iniciando a análise do produto: {nome_do_produto}")
 
-    lista_mensagens = [
-        {
-            "role": "system",
-            "content": prompt_sistema
-        },
-        {
-            "role": "user",
-            "content": prompt_usuario
-        }
-    ]
+    tentativas = 0
+    while tentativas < 3:
+        tentativas += 1
+        print(f"Tentativa {tentativas}")
+        try:
+            resposta = client.completions.create(
+                prompt="Hello world",
+                model="gpt-3.5-turbo-instruct"
+            )
+            # resposta = openai.ChatCompletion.create(
+            #    model = "gpt-3.5-turbo",
+            #    messages = [
+            #        {
+            #            "role": "system",
+            #            "content": prompt_sistema
+            #        },
+            #        {
+            #            "role": "user",
+            #            "content": prompt_usuario
+            #        }
+            #   ]
+            # )
 
-    resposta = client.chat.completions.create(
-        messages = lista_mensagens,
-        model=modelo
-    )
+            salva(f"./dados/analise-{nome_do_produto}", resposta.choices[0].message.content)
+            print("Análise concluída com sucesso!")
+        except openai.AuthenticationError as e:
+            print(f"Erro de autenticacao: {e}")
+        except openai.APIError as e:
+            print(f"Erro de API: {e}")
+            time.sleep(5)
 
-    salva(f"./dados/analise-{nome_do_produto}", resposta.choices[0].message.content)
-    print("Análise concluída com sucesso!")
 
 def carrega(nome_do_arquivo):
     try:
