@@ -1,0 +1,12 @@
+https://openai.com/pricing
+
+
+prompt_sistema = """
+
+Identifique o perfil de compra para cada cliente a seguir
+
+# Formato da Saída
+
+cliente - perfil do cliente em 3 palavras
+
+"""
