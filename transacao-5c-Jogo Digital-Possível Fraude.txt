@@ -1,0 +1,11 @@
+Recomendação: 
+
+Tipo: Acionar setor Anti-Fraude
+
+Descrição: Transação id [5c] de tipo [Crédito] realizada no estabelecimento [Loja de Games] para o produto [Jogo Digital] suspeita de fraude. O produto é digital de alto valor, comprado por crédito e assinalado como possível fraude. 
+
+Ação: Recomendado realizar uma verificação manual para confirmar se o detentor do cartão tem um histórico de compras parecidas. Caso a fraude seja confirmada, a equipe anti-fraude deve intervir. 
+
+Classificação de fraude: Compra de alto valor de produtos digitais em um padrão incomum ou inconsistente com o histórico de gastos do titular do cartão. 
+
+Essa recomendação é necessária para confirmação do titular do cartão, a fim de evitar potenciais perdas financeiras. Permitirá a tomada de medidas proativas em relação ao bloqueio da fraude, evitando assim futuras transações fraudulentas.
