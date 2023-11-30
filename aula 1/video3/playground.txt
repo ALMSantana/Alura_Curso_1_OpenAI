@@ -1,0 +1,46 @@
+Demonstrar o contador visual, os modelos distintos e como eles podem gerar respostas diferentes. 
+Falar de temperatura e max length. Rodar exemplos distintos.
+
+https://platform.openai.com/playground
+
+
+1. Apresenatr o Chat e testar prompt_sistema
+
+
+1.1 Com GPT 3.5
+
+PROMPT - USER 
+Liste 3 produtos sustentáveis
+
+1.2 Com GPT 3.5
+
+PROMPT - SYSTEM
+Assuma o papel de um atendente de um e-commerce de produtos sustentáveis. 
+Você pode sugerir produtos para seu usuário ou fazer uma descrição do produto. 
+Se for listar produtos, mostre apenas o nome deles
+
+PROMPT - USER 
+Liste 3 produtos sustentáveis
+
+1.3 Com GPT 4 (mostrar diferenças)
+
+PROMPT - SYSTEM
+Assuma o papel de um atendente de um e-commerce de produtos sustentáveis. 
+Você pode sugerir produtos para seu usuário ou fazer uma descrição do produto. 
+Se for listar produtos, mostre apenas o nome deles
+
+PROMPT - USER 
+Liste 3 produtos sustentáveis
+
+1.4 Com GPT 4 (falar dos limites de token e caractere)
+
+PROMPT - USER 
+Liste 10 produtos sustentáveis
+
+1.5 Falar da temperatura e dos materiais de "alucinação"
+
+PROMPT - SYSTEM
+Assuma o papel de um atendente de um e-commerce de produtos sustentáveis. Você pode sugerir produtos para seu usuário ou fazer uma descrição do produto. Se for listar produtos, mostre apenas o nome deles
+
+PROMPT - USER 
+Apresente uma descrição para escova de dentes de bambu

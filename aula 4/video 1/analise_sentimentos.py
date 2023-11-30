@@ -1,48 +1,10 @@
 from openai import OpenAI
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+cliente = OpenAI()
 modelo = "gpt-4"
-
-def analise_sentimento(nome_do_produto):
-    prompt_sistema = """
-    Você é um analisador de sentimentos de avaliações de produtos.
-    Escreva um parágrafo com até 50 palavras resumindo as avaliações e depois atribua qual o sentimento geral para o produto.
-    Identifique também 3 pontos fortes e 3 pontos fracos identificados a partir das avaliações.
-
-    #### Formato de saída
-
-    Nome do produto: 
-    Resumo das avaliações:
-    Sentimento geral: [aqui deve ser POSITIVO, NEUTRO ou NEGATIVO]
-    Pontos fortes: [3 bullet points]
-    Pontos fracos: [3 bullet points]
-    """
-
-    prompt_usuario = carrega(f"./dados/avaliacoes-{nome_do_produto}.txt")
-    print(f"Iniciando a análise do produto: {nome_do_produto}")
-
-    lista_mensagens = [
-        {
-            "role": "system",
-            "content": prompt_sistema
-        },
-        {
-            "role": "user",
-            "content": prompt_usuario
-        }
-    ]
-
-    resposta = client.chat.completions.create(
-        messages = lista_mensagens,
-        model=modelo
-    )
-
-    salva(f"./dados/analise-{nome_do_produto}", resposta.choices[0].message.content)
-    print("Análise concluída com sucesso!")
 
 def carrega(nome_do_arquivo):
     try:
@@ -59,6 +21,44 @@ def salva(nome_do_arquivo, conteudo):
     except IOError as e:
         print(f"Erro ao salvar arquivo: {e}")
 
-lista_de_produtos = ["Tapete de yoga", "Tabuleiro de xadrez de madeira"]
-for nome_do_produto in lista_de_produtos:
-    analise_sentimento(nome_do_produto)
+def analise_sentimento(nome_produto):
+    prompt_sistema = f"""
+        Você é um analisador de sentimentos de avaliações de produtos.
+        Escreva um parágrafo com até 50 palavras resumindo as avaliações e 
+        depois atribua qual o sentimento geral para o produto.
+        Identifique também 3 pontos fortes e 3 pontos fracos identificados a partir das avaliações.
+
+        # Formato de Saída
+
+        Nome do Produto:
+        Resumo das Avaliações:
+        Sentimento Geral: [utilize aqui apenas Positivo, Negativo ou Neutro]
+        Ponto fortes: lista com três bullets
+        Pontos fracos: lista com três bullets
+    """
+
+    prompt_usuario = carrega(f"./dados/avaliacoes-{nome_produto}.txt")
+    print(f"Inicou a análise de sentimentos do produto {nome_produto}")
+
+    lista_mensagens = [
+            {
+                "role": "system",
+                "content": prompt_sistema
+            },
+            {
+                "role": "user",
+                "content": prompt_usuario
+            }
+        ]
+
+    resposta = cliente.chat.completions.create(
+            messages = lista_mensagens,
+            model=modelo
+        )
+
+    texto_resposta = resposta.choices[0].message.content
+    salva(f"./dados/analise-{nome_produto}.txt", texto_resposta)
+
+lista_produtos = ["Camisetas de algodão orgânico", "Maquiagem mineral"]
+for nome_produto in lista_produtos:
+    analise_sentimento(nome_produto)

@@ -9,6 +9,7 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 modelo = "gpt-4"
 
 codificador = tiktoken.encoding_for_model(modelo)
+
 def carrega(nome_do_arquivo):
     try:
         with open(nome_do_arquivo, "r") as arquivo:
@@ -26,7 +27,7 @@ O formato de saída deve ser:
 cliente - descreva o perfil do cliente em 3 palavras
 """
 
-prompt_usuario = carrega("./dados/lista_de_compras_100_clientes.csv")
+prompt_usuario = carrega("./dados/lista_de_compras_10_clientes.csv")
 
 lista_de_tokens = codificador.encode(prompt_sistema + prompt_usuario)
 numero_de_tokens = len(lista_de_tokens)

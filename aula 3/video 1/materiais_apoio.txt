@@ -1,6 +1,3 @@
-https://openai.com/pricing
-
-
 prompt_sistema = """
 
 Identifique o perfil de compra para cada cliente a seguir
@@ -10,3 +7,13 @@ Identifique o perfil de compra para cada cliente a seguir
 cliente - perfil do cliente em 3 palavras
 
 """
+
+prompt_usuario = <colocar 100 clietnes>
+
+Falar das diferenças e do tokenizer
+https://platform.openai.com/tokenizer
+
+
+Falar do preço
+https://openai.com/pricing
+https://platform.openai.com/docs/models

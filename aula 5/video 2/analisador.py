@@ -35,7 +35,7 @@ def analisar_transacao(lista_de_transacoes):
 
     Cada nova transação deve ser inserida dentro da lista do JSON. Adote o formato de resposta abaixo.
 
-    # Formato Saída (gere apenas o JSON abaixo como resposta)
+    # Formato Saída 
     {
         "transacoes": [
             {
@@ -59,13 +59,14 @@ def analisar_transacao(lista_de_transacoes):
         },
         {
             "role": "user",
-            "content": f"Considere o CSV abaixo, onde cada linha é uma transação diferente: {lista_de_transacoes}. Adote o # Formato Resposta sugerido anteriormente."
+            "content": f"Considere o CSV abaixo, onde cada linha é uma transação diferente: {lista_de_transacoes}. Sua resposta deve adotar o #Formato de Resposta (apeans um json sem outros comentários)"
         }
     ]
 
     resposta = client.chat.completions.create(
         messages = lista_mensagens,
         model=modelo,
+        temperature=0
     )
 
     conteudo = resposta.choices[0].message.content.replace("'", '"')
@@ -77,7 +78,7 @@ def analisar_transacao(lista_de_transacoes):
 def gera_parecer(transacao):
     print("2. Gerando parecer para transacao ", transacao["id"])
     prompt_sistema = f"""
-    Para a seguinte transação, forneça um parecer, apenas se o status dela for de "Possível Fraude". Indique no parecer uma justificativa para que você identifique uma fraud.
+    Para a seguinte transação, forneça um parecer, apenas se o status dela for de "Possível Fraude". Indique no parecer uma justificativa para que você identifique uma fraude.
     Transação: {transacao}
 
     ## Formato de Resposta

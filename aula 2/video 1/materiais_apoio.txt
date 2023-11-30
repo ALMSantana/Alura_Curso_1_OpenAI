@@ -1,6 +1,16 @@
-https://platform.openai.com/docs/api-reference/chat/create
+
 
 # Criar o categorizador com ênfase em mostrar uma troca de mensagens e apenas ilustrar o uso do chat
 
-categorizador.py (versão básica, criando uma chamada de chat; 
-mostrando documentação; mostrando N respostas)
+1. Instalar bibliotecas
+2. Implementar nova estrutura da API
+3. Colar prompts
+4. Rodar e corrigir erro de chave.
+4.1 Criar chave
+4.2 Falar do consrutor
+4.3 Executar novamente
+4.4 Mostrar resultado JSON
+4.5 Revisar para resultado não JSON
+5. Falar dos outros parâmetros
+https://platform.openai.com/docs/api-reference/chat/create
+6. Mostrar o n e as três respostas

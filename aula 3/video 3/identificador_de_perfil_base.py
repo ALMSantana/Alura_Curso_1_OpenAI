@@ -16,8 +16,6 @@ def carrega(nome_do_arquivo):
     except IOError as e:
         print(f"Erro: {e}")
 
-
-
 prompt_sistema = """
 Identifique o perfil de compra para cada cliente a seguir.
 

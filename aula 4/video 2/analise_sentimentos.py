@@ -9,6 +9,21 @@ load_dotenv()
 client = OpenAI(api_key="")
 modelo = "gpt-4"
 
+def carrega(nome_do_arquivo):
+    try:
+        with open(nome_do_arquivo, "r") as arquivo:
+            dados = arquivo.read()
+            return dados
+    except IOError as e:
+        print(f"Erro no carregamento de arquivo: {e}")
+
+def salva(nome_do_arquivo, conteudo):
+    try:
+        with open(nome_do_arquivo, "w", encoding="utf-8") as arquivo:
+            arquivo.write(conteudo)
+    except IOError as e:
+        print(f"Erro ao salvar arquivo: {e}")
+
 def analise_sentimento(nome_do_produto):
     prompt_sistema = """
     Você é um analisador de sentimentos de avaliações de produtos.
@@ -58,22 +73,6 @@ def analise_sentimento(nome_do_produto):
             print(f"Erro de API: {e}")
             time.sleep(5)
 
-
-def carrega(nome_do_arquivo):
-    try:
-        with open(nome_do_arquivo, "r") as arquivo:
-            dados = arquivo.read()
-            return dados
-    except IOError as e:
-        print(f"Erro no carregamento de arquivo: {e}")
-
-def salva(nome_do_arquivo, conteudo):
-    try:
-        with open(nome_do_arquivo, "w", encoding="utf-8") as arquivo:
-            arquivo.write(conteudo)
-    except IOError as e:
-        print(f"Erro ao salvar arquivo: {e}")
-
-lista_de_produtos = ["Tapete de yoga", "Tabuleiro de xadrez de madeira"]
+lista_de_produtos = ["Camisetas de algodão orgânico", "Jeans feitos com materiais reciclados"]
 for nome_do_produto in lista_de_produtos:
     analise_sentimento(nome_do_produto)

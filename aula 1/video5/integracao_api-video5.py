@@ -3,24 +3,20 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
+cliente = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-modelo = "gpt-4"
-
-lista_mensagens = [
-                {
-                    "role": "system",
-                    "content": "Gere nomes de produtos fictícios sem descrição de acordo com a requisição do usuário."
-                },
-                {
-                    "role": "user",
-                    "content": "Gere 5 produtos"
-                }
-            ]
-
-resposta = client.chat.completions.create(
-    messages = lista_mensagens,
-    model=modelo,
+resposta = cliente.chat.completions.create(
+    messages=[
+        {
+            "role" : "system",
+            "content" :"Listar apenas os nomes dos produtos, sem considerar descrição."
+        },
+        {
+            "role" : "user",
+            "content" :"Liste 3 produtos sustentáveis"
+        }
+    ],
+    model="gpt-4"
 )
 
-print(resposta)
+print(resposta.choices[0].message.content)

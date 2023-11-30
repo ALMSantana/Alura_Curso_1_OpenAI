@@ -1,0 +1,10 @@
+Demonstrar como uma conta é criada. Seções de "Organization", "Billing", "User limite"  e demonstrar um exemplo de geração de itens
+https://platform.openai.com
+
+1. Como criar uma conta
+2. Organization
+3. Billing
+4. User limit
+5. Tier List e Free Tier
+
+https://platform.openai.com/docs/guides/rate-limits/usage-tiers?context=tier-free
