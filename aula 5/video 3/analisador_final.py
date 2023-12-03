@@ -28,13 +28,17 @@ def salva(nome_do_arquivo, conteudo):
         print(f"Erro ao salvar arquivo: {e}")
 
 def analisar_transacao(lista_de_transacoes):
-    print("1. Iniciando a avaliação de transações")
+    print("1. Iniciando a análise de transações")
     prompt_sistema = """
     Analise as transações financeiras a seguir e identifique se cada uma delas é uma "Possível Fraude" ou deve ser "Aprovada". 
     Adicione um atributo "Status" com um dos valores: "Possível Fraude" ou "Aprovado".
 
     Cada nova transação deve ser inserida dentro da lista do JSON. Adote o formato de resposta abaixo.
 
+    # Possíveis indicações de fraude
+    - Transações com valores muito discrepantes
+    - Transações que ocorrem em locais muito distantes um do outro
+    
     # Formato Saída 
     {
         "transacoes": [
@@ -59,7 +63,7 @@ def analisar_transacao(lista_de_transacoes):
         },
         {
             "role": "user",
-            "content": f"Considere o CSV abaixo, onde cada linha é uma transação diferente: {lista_de_transacoes}. Sua resposta deve adotar o #Formato de Resposta (apeans um json sem outros comentários)"
+            "content": f"Considere o CSV abaixo, onde cada linha é uma transação diferente: {lista_de_transacoes}. Sua resposta deve adotar o #Formato de Resposta (apenas um json sem outros comentários)"
         }
     ]
 

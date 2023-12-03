@@ -52,13 +52,14 @@ def analise_sentimento(nome_do_produto):
             return  
         except openai.AuthenticationError as e:
             print(f"Erro de autenticacao: {e}")
-        except openai.APIError as e:
-            print(f"Erro de API: {e}")
-            time.sleep(5)
         except openai.RateLimitError as e:
             print(f"Erro de limite de taxa: {e}")
             time.sleep(tempo_de_espera)
             tempo_de_espera *= 2
+        except openai.APIError as e:
+            print(f"Erro de API: {e}")
+            time.sleep(5)
+        
 
 
 def carrega(nome_do_arquivo):

@@ -35,6 +35,10 @@ def analisar_transacao(lista_de_transacoes):
 
     Cada nova transação deve ser inserida dentro da lista do JSON. Adote o formato de resposta abaixo.
 
+    # Possíveis indicações de fraude
+    - Transações com valores muito discrepantes
+    - Transações que ocorrem em locais muito distantes um do outro
+    
     # Formato Saída 
     {
         "transacoes": [
@@ -59,7 +63,7 @@ def analisar_transacao(lista_de_transacoes):
         },
         {
             "role": "user",
-            "content": f"Considere o CSV abaixo, onde cada linha é uma transação diferente: {lista_de_transacoes}. Sua resposta deve adotar o #Formato de Resposta (apeans um json sem outros comentários)"
+            "content": f"Considere o CSV abaixo, onde cada linha é uma transação diferente: {lista_de_transacoes}. Sua resposta deve adotar o #Formato de Resposta (apenas um json sem outros comentários)"
         }
     ]
 
